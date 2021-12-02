@@ -2,13 +2,10 @@ import turtle
 import random
 import time
 
-
 #Window
 wn = turtle.Screen()
 wn.bgcolor("black")
 wn.title("DUELITY")
-
-
 
 floor = -380
 roof = 380
@@ -26,11 +23,9 @@ for side in range(4):
     border_draw.lt(90)
 border_draw.hideturtle()
 
-
 #healthbars
 health_a = 5
 health_b = 5
-
 
 health_a_draw = turtle.Turtle()
 health_a_draw.speed(0)
@@ -81,7 +76,6 @@ bullet_a.speed(0)
 bullet_a.shapesize(0.5, 0.5)
 bullet_a.hideturtle()
 
-
 bullet_b = turtle.Turtle()
 bullet_b.color("green")
 bullet_b.shape("square")
@@ -91,9 +85,7 @@ bullet_b.speed(0)
 bullet_b.shapesize(0.5, 0.5)
 bullet_b.hideturtle()
 
-
 bulletspeed = 20
-
 
 #Player movement
 def player_a_moveleft():
@@ -150,9 +142,6 @@ def isCollision(p, pb):
     else:
         return False
 
-
-
-
 #keybinds
 wn.listen()
 wn.onkeypress(player_a_moveleft, "a")
@@ -166,9 +155,6 @@ start_time = time.time()
 #Main Loop
 while True:
     wn.update()
-
-
-
     if bulletstate_a == "ready":
         bullet_a.goto(-800, -800)
 
@@ -194,10 +180,6 @@ while True:
         bulletstate_b = "ready"
 
     #collisions
-
-
-
-
     if isCollision(player_a, bullet_b):
         bullet_b.hideturtle()
         bulletstate_b = "ready"
@@ -233,20 +215,7 @@ while True:
         bullet_a.hideturtle()
         bulletstate_a = "ready"
         bulletstate_b = "ready"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 turtle.mainloop()
 
 
